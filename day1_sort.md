@@ -1,6 +1,8 @@
 # Insertion sort
 `Insertion Sort`는 작은 수의 요소를 정렬할 때 효율적인 정렬 알고리즘입니다. `Insertion Sort`는 현재 값을 key에 저장, key-1 ~ 0을 key와 비교, key 값이 더 작으면 비교 대상을 한 칸 뒤로 보냅니다. 자기랑 같거나 보다 작은 값을 만나면 순회를 멈추고 그 뒤에 key를 끼워넣습니다. 이를 코드로 옮기면 다음과 같습니다.
+
 ![pseudo_insertion_sort](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FduTFpj%2FbtqFPGOYUEl%2FQGvB3V4YhJWJPoVmWeqKT1%2Fimg.png)
+
 ```cpp
 void insertionSort(int* arr, int len) {
     int key, i, j;
@@ -53,8 +55,11 @@ merge sort는 divide-and-conquer를 따르는 대표적인 알고리즘입니다
 merge sort 알고리즘의 핵심은 Combine 과정입니다. 두 개의 서브 시퀀스를 합치기 위해 MERGE(A, p, q, r)을 호출합니다. A는 배열, p, q, r은 p <= q < r인 인덱스입니다. 시퀀스 A는 A[p..q], A[q+1..r]로 나뉘어 있고 merge를 통해 A[p..r]이 된다고 가정합니다.
 
 MERGE는 두 정렬된 서브 시퀀스의 첫 번째 요소부터 비교하며 더 작은 요소를 시퀀스에 추가하고 서브 시퀀스에선 제거합니다. 한 서브 시퀀스가 모두 비면, 다른 서브 시퀀스를 모조리 합치고 MERGE를 종료합니다. MERGER는 n = r - p + 1인 O(n)의 시간 복잡도를 가집니다. 다음은 MERGE, MERGE-SORT 코드입니다.
+
 ![pseudo_merge](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbW7zBA%2FbtqFONOOvI1%2FB4mckn4wjHagWB8VjoPudK%2Fimg.png)
+
 ![pseudo_merge_sort](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FekxcbI%2FbtqFQyJIcOi%2F7An1MXFdpEkUZTqx4hNLA0%2Fimg.png)
+
 ```cpp
 void merge(int* arr, const int p, const int q, const int r) {
     int i;
@@ -109,8 +114,11 @@ void mergeSort(int* arr, const int &p, const int &r) {
 aO(n/b) + D(n) + C(n), D(n) to divide problem, C(n) to conquer problem
 
 그래서 다음과 같은 식이 완성됩니다:
+
 ![general recurrence](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F4b4UY%2FbtqFOMWJaeI%2FNj5HZjbtS0CND4veagMyhk%2Fimg.png)
+
 merge sort에서 a = b = 2이므로 식은 다음과 같이 변합니다.
+
 ![merge sort recurrence](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FmBLiN%2FbtqFQybUwy7%2FNgdHhbiaPzIMQYnbnafVK0%2Fimg.png)
 # 문제를 풀어보자!
 [점프와 순간이동](https://programmers.co.kr/learn/courses/30/lessons/12980) - 프로그래머스 난이도 2
